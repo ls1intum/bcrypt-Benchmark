@@ -20,6 +20,6 @@ If you need, you can modify the default configuration before compilation in the 
 
 ## Execution
 
-Run the tool with `java -jar <path-to-jar>/HashingBenchmark-<version>.jar`. After some seconds, a text file will be generated in the same directory as the tool.
+Run the tool with `java -jar <path-to-jar>/bcrypt-Benchmark-<version>.jar`. After some seconds, a text file will be generated in the same directory as the tool.
 
 The log file contains all measurements taken. At the end the tool recommends a round setting for your hardware configuration.

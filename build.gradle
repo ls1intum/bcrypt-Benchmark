@@ -6,8 +6,8 @@ group "de.tum.in.www1.artemis"
 version "1.0.0"
 description = "A small tool that proposes the best number of salting rounds for a specific hardware configuration"
 
-sourceCompatibility=16
-targetCompatibility=16
+sourceCompatibility=17
+targetCompatibility=17
 
 repositories {
     mavenCentral()
@@ -15,4 +15,16 @@ repositories {
 
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-security:${spring_boot_version}"
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes(
+                'Main-Class': 'de.tum.in.www1.artemis.Benchmark',
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
