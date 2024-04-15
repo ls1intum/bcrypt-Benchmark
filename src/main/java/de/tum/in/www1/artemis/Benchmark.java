@@ -71,7 +71,7 @@ public class Benchmark {
 
         // Mark the setting with the closest average to the goal time as recommended
         int recommendedRounds = rounds;
-        if (averageMeasurements.size() > 1 && Math.abs(averageMeasurements.get(averageMeasurements.size() - 1) - MINIMUM_HASHING_TIME_NS) > Math.abs(
+        if (averageMeasurements.size() > 1 && Math.abs(averageMeasurements.getLast() - MINIMUM_HASHING_TIME_NS) > Math.abs(
             averageMeasurements.get(averageMeasurements.size() - 2) - MINIMUM_HASHING_TIME_NS)) {
             recommendedRounds--;
         }
